@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,700;1,400;1,500&family=Space+Mono:ital,wght@0,700;1,400;1,700&display=swap');
+:root {
+    --font-color: #59e3c5;
+    --background-color:  #0a192f ;
+    --secondBackground-color:  #3f5d8833 ;
+}
+
+body {
+    background: var(--background-color);
+    scroll-behavior: smooth;
+    color: var(--font-color);
+    font-family:'Space Mono', monospace;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+/* header ------------------------------------------------------------- */
+header {
+    position: fixed;
+    height: 10vh;
+    z-index: 10;
+    background-color: var(--background-color);
+    width: 100%;
+}
+
+header nav {
+    top: 3vh;
+    left: 10vw;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.navlink {
+    text-decoration: none;
+    font-size: 1.4vw;
+    padding: 10px;
+    margin: 0 5px;
+    color: #59e3c5;
+    white-space: nowrap;
+}
+
+.navlink:hover {
+    background-color: #59e3c59d;
+    color: rgb(239, 210, 210);
+    border-radius: 5px;
+}
+
+/* End header -------------------------------------------------------------------------- */
+
+.scrollUp{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 10;
+    background-color: rgb(47, 57, 168);
+    display: none;
+}
+
+.scrollUp a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--font-color);
+}
+
+.scrollUp:hover {
+    background-color: rgba(55, 66, 190, 0.475);
+}
+
+/* main ----------------------------------------------------------------------------------- */
+
+/* main {
+    
+    height: 100vh;
+    scroll-snap-type: y proximity;
+    overflow-y: auto;
+} */
+
+.container {
+    position: relative;
+}
+
+main>div {
+    min-height: 100vh;
+    max-width: 100vw;
+    position: relative;
+    /* scroll-snap-align: start; */
+}
+
+main>div .container .content{
+    position: absolute;
+    top: 25vh;
+    width: 100%;
+}
+
+main>div:nth-child(2n + 0) {
+    background-color: var(--secondBackground-color);
+}
+
+/* Home Section --------------------------------------------------------------------------- */
+
+.home .content :nth-child(1){
+    -webkit-text-stroke: 1vw var(--background-color);
+    white-space: nowrap;
+}
+
+.home .content :nth-child(1)::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    color: var(--font-color);
+    -webkit-text-stroke: 0vw var(--background-color);
+    overflow: hidden;
+    animation: animate 2.5s linear 1 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.home .content :nth-child(2){
+    margin-top: 3vh;
+    font-size: 4vw;
+    -webkit-text-stroke: 2vw var(--background-color);
+    white-space: nowrap;
+}
+
+.home .content :nth-child(2)::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    color: var(--font-color);
+    -webkit-text-stroke: 0vw var(--background-color);
+    overflow: hidden;
+    animation: animate 3s linear 1 2.7s;
+    animation-fill-mode: forwards;
+}
+
+.home .content :nth-child(3){
+    font-size: 2.5vw;
+    -webkit-text-stroke: 2vw var(--background-color);
+    white-space: nowrap;
+}
+
+.home .content :nth-child(3)::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    color: var(--font-color);
+    -webkit-text-stroke: 0vw var(--background-color);
+    overflow: hidden;
+    animation: animate 3s linear 1 4.2s;
+    animation-fill-mode: forwards;
+}
+
+.home .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.home .content div:nth-child(2) {
+    width: 40vw;
+    height: 60vh;
+    overflow: hidden;
+    opacity: 0.3;
+}
+
+.home .content div:nth-child(2) img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes animate {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* End Home Section --------------------------------------------------------------------- */
+
+/* About Section ----------------------------------------------------------------------- */
+
+.about .content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about .content div:nth-child(1) {
+    width: 45vw;
+}
+
+.about .content div:nth-child(2) {
+    position: relative;
+    width: 25vw;
+    height: 50vh;
+    overflow: hidden;
+    opacity: 0.6;
+}
+
+.about .content div:nth-child(2) img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* End About Section ------------------------------------------------------------------*/
+
+/* Education Section  -----------------------------------------------------------------*/
+.edu .content {
+    top : 15vh !important;
+}
+
+/* .edu .content > div {
+    display: grid;
+} */
+
+/* End Education Section */
+.skills .content {
+    top: 13vh !important;
+}
+
+
+/* Projects Section --------------------------------------------------------------------*/
+.projects .content {
+    top: 12vh !important;
+    width: 100%;
+    min-height: 60vh;
+}
+
+.projects .group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.projects .group .project {
+    width: 30%;
+    height: 40vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.projects .project img {
+    width: 100%;
+    height: 100%;
+    transition: all .8s ease-in-out;
+}
+
+/* .projects .card .imag{
+    height: 376.29px;
+} */
+
+.projects .buttons {
+    display: grid;
+    align-items: center;
+    height: 15vh;
+    position: absolute;
+    margin: 0 auto;
+    bottom: -50%;
+    left: 30%;
+    transition: all 1s ease-in-out;
+}
+
+.projects a{
+    text-decoration: none;
+    font-size: 1.4vw;
+    padding: 1vw;
+    margin: 0 0.5vw;
+    color: var(--font-color);
+}
+
+.projects a:hover {
+    background-color: #59e3c59d;
+    color: rgb(239, 210, 210);
+    border-radius: 5px;
+}
+
+.projects .project:hover img{
+    opacity: 0.2;
+}
+
+.projects .project:hover .buttons {
+    bottom: 5vh;
+}
+
+.projects .view {
+    margin-top: 10vh;
+    text-align: center;
+    z-index: 15;
+}
+
+/* End Projects Section -----------------------------------------------------------------*/
+
+/* Contact Section -------------------------------------------------------------*/
+.contact {
+    min-height: 90vh;
+}
+
+.contact .content {
+    top: 15vh !important;
+}
+
+.contact .content > div{
+    display: flex;
+    margin: 4vh 0;
+}
+
+.contact .content > div i {
+    font-size: 3vw;
+    margin-right: 1.5vw;
+}
+
+.contact .content .social a{
+    text-decoration: none;
+    font-size: 1.4vw;
+    margin: 0 1vw;
+    color: var(--font-color);
+}
+
+.contact .content .social a i {
+    margin-left: 1vw;
+}
+
+.contact .content .social a:hover {
+    background-color: #59e3c59d;
+    color: rgb(239, 210, 210);
+    border-radius: 5px;
+}
+
+footer {
+    background-color: var(--secondBackground-color);
+    height: 10vh;
+}
