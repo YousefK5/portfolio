@@ -25,6 +25,7 @@ header {
 }
 
 header nav {
+    margin-top: 3vh;
     top: 3vh;
     left: 10vw;
 }
