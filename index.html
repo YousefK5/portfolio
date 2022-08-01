@@ -20,7 +20,7 @@
   <body>
     <!-- header-------------------------------------------------------------------- -->
     <header>
-      <nav>
+      <!-- <nav>
         <ul>
           <li><a href="#home" class="navlink active">Home</a></li>
           <li><a href="#about" class="navlink">About Me</a></li>
@@ -29,18 +29,25 @@
           <li><a href="#skills" class="navlink">Skills</a></li>
           <li><a href="#projects" class="navlink">Projects</a></li>
           <li><a href="#contact" class="navlink">Contact</a></li>
-          <!-- <li>
-            <div class="menu">
-              <form action="">
-                <label for="menu"
-                  ><i class="fa-solid fa-bars-staggered"></i
-                ></label>
-                <input type="checkbox" id="menu"/>
-              </form>
-            </div>
-          </li> -->
         </ul>
-      </nav>
+      </nav> -->
+      <div class="container">
+        <section class="top-nav">
+          <input id="menu-toggle" type="checkbox" />
+          <label class="menu-button-container" for="menu-toggle">
+            <div class="menu-button"></div>
+          </label>
+          <ul class="menu">
+            <li><a href="#home" class="navlink active">Home</a></li>
+            <li><a href="#about" class="navlink">About Me</a></li>
+            <li><a href="#edu" class="navlink">Education</a></li>
+            <li><a href="#exp" class="navlink">Experience</a></li>
+            <li><a href="#skills" class="navlink">Skills</a></li>
+            <li><a href="#projects" class="navlink">Projects</a></li>
+            <li><a href="#contact" class="navlink">Contact</a></li>
+          </ul>
+        </section>
+      </div>
     </header>
     <!-- End Header ----------------------------------------------------------------- -->
     <div class="scrollUp">
@@ -66,6 +73,9 @@
             </div>
           </div>
         </div>
+        <div class="scrollDown">
+          <a href="#about"><i class="fa-solid fa-arrow-down"></i></a>
+        </div>
       </div>
       <!-- End Home -------------------------------------------------------------------- -->
 
@@ -79,8 +89,8 @@
               <p style="font-size: 1.75vw">
                 Developer, a fresh graduate from the Hashemite University,
                 majoring in Software Engineering, and currently I am student at
-                orange coding academy in the path of web development, I do not
-                have much experience, but I can develop myself and learn quickly
+                orange coding academy in the path of web development, I can
+                develop myself and learn quickly
               </p>
             </div>
             <div>
@@ -102,10 +112,18 @@
                 <h4>The Hashemite University</h4>
                 <h4>GPA : 3.7</h4>
               </div>
+
               <div class="col-4">
                 <br />
                 <h4>09 / 2018 - 02 / 2022</h4>
               </div>
+              <ul class="col-11">
+                <li>Basic of Programming (C++)</li>
+                <li>Concepts of OOP</li>
+                <li>Data Structure</li>
+                <li>Databases</li>
+                <li>SDLC , QA</li>
+              </ul>
             </div>
             <br />
             <hr />
@@ -118,6 +136,12 @@
                 <br />
                 <h4>06 / 2022 - Present</h4>
               </div>
+              <ul class="col-11">
+                <li>HTML , CSS</li>
+                <li>Saas , Bootsrap</li>
+                <li>Javascript , ReactJS</li>
+                <li>PHP , Laravel</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -140,6 +164,13 @@
                 <h3>10 / 2021 - 12 / 2021</h3>
               </div>
             </div>
+            <ul>
+              <li class="fs-4">Html</li>
+              <li class="fs-4">CSS</li>
+              <li class="fs-4">Javascript</li>
+              <li class="fs-4">Bootstrap</li>
+              <li class="fs-4">PHP</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -160,6 +191,7 @@
                   <li><h4>Teamwork and Collaboration</h4></li>
                   <li><h4>Presntation Skills</h4></li>
                   <li><h4>Searching Skills</h4></li>
+                  <li><h4>Problem Solving</h4></li>
                 </ul>
               </div>
               <div class="col-2"></div>
@@ -190,8 +222,17 @@
             <hr />
             <div class="group">
               <div class="project">
-                <h4>MyBooks Website</h4>
-                <img src="images/book.png" />
+                <section>
+                  <h4>MyBooks Website</h4>
+                  <p>
+                    An online bookstore that displays book information, author,
+                    price, and more.
+                  </p>
+                  <p>using HTML,CSS</p>
+                </section>
+                <section>
+                  <img src="images/book.png" />
+                </section>
                 <div class="buttons">
                   <a href="https://github.com/YousefK5/Book" target="_blank"
                     >Show Project</a
@@ -202,8 +243,16 @@
                 </div>
               </div>
               <div class="project">
-                <h4>Sport Time Website</h4>
-                <img src="images/sport.png" />
+                <section>
+                  <h4>Sport Website</h4>
+                  <p>
+                    A site to publish sports news and display match schedules
+                  </p>
+                  <p>using HTML,CSS</p>
+                </section>
+                <section>
+                  <img src="images/sport.png" />
+                </section>
                 <div class="buttons">
                   <a
                     href="https://github.com/YousefK5/Assignment1"
@@ -218,8 +267,14 @@
                 </div>
               </div>
               <div class="project">
-                <h4>Flex-Grid Task</h4>
-                <img src="images/Screenshot_1.png" class="imag" />
+                <section>
+                  <h4>Flex-Grid Task</h4>
+                  <p>Task in Flex and Grid diplay in CSS</p>
+                  <p>using HTML,CSS</p>
+                </section>
+                <section>
+                  <img src="images/Screenshot_1.png" class="imag" />
+                </section>
                 <div class="buttons">
                   <a href="https://github.com/YousefK5/task1" target="_blank"
                     >Show Project</a
@@ -251,26 +306,44 @@
             <h1>Contact</h1>
             <hr />
             <div>
-              <i class="fa-solid fa-house"></i>
-              <h4>Zarqa , Russifah</h4>
-            </div>
-            <div>
-              <i class="fa-solid fa-envelope"></i>
-              <h4>yousefsuleiman58@gmail.com</h4>
-            </div>
-            <div>
-              <i class="fa-solid fa-phone"></i>
-              <h4>0778083546</h4>
-            </div>
-            <div class="social">
-              <a
-                href="https://www.linkedin.com/in/yousef-suleiman-9728b2223/"
-                target="_blank"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
-              <a href="https://github.com/YousefK5" target="_blank"
-                ><i class="fa-brands fa-github"></i
-              ></a>
+              <div>
+                <div>
+                  <i class="fa-solid fa-house"></i>
+                  <h4>Amman , Marka</h4>
+                </div>
+                <div>
+                  <i class="fa-solid fa-envelope"></i>
+                  <h4>yousefsuleiman58@gmail.com</h4>
+                </div>
+                <div>
+                  <i class="fa-solid fa-phone"></i>
+                  <h4>0778083546</h4>
+                </div>
+                <div class="social">
+                  <a
+                    href="https://www.linkedin.com/in/yousef-suleiman-9728b2223/"
+                    target="_blank"
+                    ><i class="fa-brands fa-linkedin"></i
+                  ></a>
+                  <a href="https://github.com/YousefK5" target="_blank"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div>
+                <h3>You Can Send A Message</h3>
+                <hr />
+                <form>
+                  <input type="email" placeholder="Email.." />
+                  <textarea
+                    placeholder="Write Your Message"
+                    maxlength="100"
+                    style="max-height: 30vh"
+                  ></textarea>
+                  <button>Send <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+              </div>
             </div>
           </div>
         </div>

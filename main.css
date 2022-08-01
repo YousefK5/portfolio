@@ -36,12 +36,16 @@ nav ul {
 }
 
 .navlink {
+    /* width: 12vw; */
+    height: 100%;
     text-decoration: none;
-    font-size: 1.4vw;
-    padding: 10px;
-    margin: 0 5px;
+    font-size: 1.7vw;
+    padding: 2vh 2vw;
     color: #59e3c5;
     white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navlink:hover {
@@ -50,9 +54,136 @@ nav ul {
     border-radius: 5px;
 }
 
-.header .menu {
+
+/* .top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color); 
+    /* background: linear-gradient(to left, #f46b45, #eea849); */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* color: #FFF;
+    height: 100%;
+  } */
+
+  .top-nav ul li{
+    margin: 0;
+    padding: 0;
+  } 
+  
+  .menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu > li {
+    padding : 1rem 0;
+    margin: 0 1rem;
+    overflow: hidden;
+  }
+  
+  .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: #fff;
     position: absolute;
-}
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+  
+  .menu-button::before {
+    content: '';
+    margin-top: -8px;
+  }
+  
+  .menu-button::after {
+    content: '';
+    margin-top: 8px;
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+  
+  @media (max-width: 900px) {
+    .menu-button-container {
+      display: flex;
+    }
+    .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 50px;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    #menu-toggle ~ .menu li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu li {
+      border: 1px solid var(--secondBackground-color);
+      height: 2.5em;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > li {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      color: white;
+      background-color: #0a192f56;
+    }
+
+    .menu > li > a {
+        width: 100%;
+        height: 4vh;
+    }
+    .menu > li:not(:last-child) {
+      border-bottom: 1px solid #444;
+    }
+  }
+
+
+
 
 /* End header -------------------------------------------------------------------------- */
 
@@ -105,7 +236,7 @@ main>div {
 
 main>div .container .content{
     position: absolute;
-    top: 25vh;
+    /* top: 10vh; */
     width: 100%;
 }
 
@@ -114,13 +245,16 @@ main>div:nth-child(2n + 0) {
 }
 
 /* Home Section --------------------------------------------------------------------------- */
+.home .content {
+    top: 25vh;
+}
 
-.home .content :nth-child(1){
+.home .content div:nth-child(1) :nth-child(1){
     -webkit-text-stroke: 1vw var(--background-color);
     white-space: nowrap;
 }
 
-.home .content :nth-child(1)::before {
+.home .content div:nth-child(1) :nth-child(1)::before {
     content: attr(data-text);
     position: absolute;
     width: 0;
@@ -131,14 +265,14 @@ main>div:nth-child(2n + 0) {
     animation-fill-mode: forwards;
 }
 
-.home .content :nth-child(2){
+.home .content div:nth-child(1) :nth-child(2){
     margin-top: 3vh;
     font-size: 4vw;
     -webkit-text-stroke: 2vw var(--background-color);
     white-space: nowrap;
 }
 
-.home .content :nth-child(2)::before {
+.home .content div:nth-child(1) :nth-child(2)::before {
     content: attr(data-text);
     position: absolute;
     width: 0;
@@ -149,13 +283,13 @@ main>div:nth-child(2n + 0) {
     animation-fill-mode: forwards;
 }
 
-.home .content :nth-child(3){
+.home .content div:nth-child(1) :nth-child(3){
     font-size: 2.5vw;
     -webkit-text-stroke: 2vw var(--background-color);
     white-space: nowrap;
 }
 
-.home .content :nth-child(3)::before {
+.home .content div:nth-child(1) :nth-child(3)::before {
     content: attr(data-text);
     position: absolute;
     width: 0;
@@ -171,16 +305,21 @@ main>div:nth-child(2n + 0) {
     justify-content: space-between;
 }
 
+.home .content div:nth-child(1) {
+    width: 50vw;
+}
+
 .home .content div:nth-child(2) {
     width: 40vw;
     height: 60vh;
-    overflow: hidden;
-    opacity: 0.3;
+    /* overflow: hidden; */
+    opacity: 0.8;
 }
 
 .home .content div:nth-child(2) img {
     width: 100%;
     height: 100%;
+    border-radius: 5vh;
 }
 
 @keyframes animate {
@@ -192,11 +331,49 @@ main>div:nth-child(2n + 0) {
     }
 }
 
+.scrollDown{
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 20 !important; 
+    background-color: rgb(47, 57, 168);
+    animation: anim 1.5s ease-in-out infinite;
+}
+
+.scrollDown a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.scrollDown:hover {
+    background-color: rgba(55, 66, 190, 0.475);
+}
+
+@keyframes anim {
+    from {
+        bottom: 5vh;
+    }
+    to {
+        bottom: 1vh;
+    }
+    
+}
+
 /* End Home Section --------------------------------------------------------------------- */
 
 /* About Section ----------------------------------------------------------------------- */
 
 .about .content {
+    top: 25vh;
     display: flex;
     justify-content: space-between;
 }
@@ -207,8 +384,8 @@ main>div:nth-child(2n + 0) {
 
 .about .content div:nth-child(2) {
     position: relative;
-    width: 25vw;
-    height: 50vh;
+    width: 20vw;
+    height: 40vh;
     overflow: hidden;
     opacity: 0.6;
 }
@@ -223,24 +400,31 @@ main>div:nth-child(2n + 0) {
 
 /* Education Section  -----------------------------------------------------------------*/
 .edu .content {
-    top : 15vh !important;
+    top : 10vh;
 }
 
+.edu .content div p {
+    font-size: 1.6vw;
+}
 /* .edu .content > div {
     display: grid;
 } */
 
+.exp .content {
+    top: 25vh;
+}
+
 /* End Education Section */
 .skills .content {
-    top: 13vh !important;
+    top: 20vh;
 }
 
 
 /* Projects Section --------------------------------------------------------------------*/
 .projects .content {
-    top: 12vh !important;
+    top: 12vh;
     width: 100%;
-    min-height: 60vh;
+    /* min-height: 60vh; */
 }
 
 .projects .group {
@@ -252,9 +436,17 @@ main>div:nth-child(2n + 0) {
 
 .projects .group .project {
     width: 30%;
-    height: 40vh;
+    height: 60vh;
     position: relative;
     overflow: hidden;
+}
+
+.projects .group .project section:nth-child(1) {
+    height: 42%;
+}
+
+.projects .group .project section:nth-child(2) {
+    height: 58%;
 }
 
 .projects .project img {
@@ -301,7 +493,7 @@ main>div:nth-child(2n + 0) {
 }
 
 .projects .view {
-    margin-top: 10vh;
+    margin-top: 5vh;
     text-align: center;
     z-index: 15;
 }
@@ -310,19 +502,54 @@ main>div:nth-child(2n + 0) {
 
 /* Contact Section -------------------------------------------------------------*/
 .contact {
-    min-height: 90vh;
+    min-height: 94vh;
 }
 
 .contact .content {
-    top: 15vh !important;
+    top: 15vh;
 }
 
-.contact .content > div{
+.contact .content>div {
+    display: flex;
+    align-items: center;
+}
+
+.contact .content>div>div:nth-child(1) {
+    width: 50vw;
+    margin: 0 2.5vw;
+}
+
+.contact .content>div>div:nth-child(2) {
+    width: 30vw;
+    margin: 0 2.5vw;
+}
+
+.contact .content>div form {
+    display: grid;
+    gap: 3vh;
+}
+
+.contact .content>div form button{
+    font-size: 1.4vw;
+    padding: 1vw;
+    margin: 0 0.5vw;
+    color: var(--font-color);
+    background-color: var(--background-color);
+    border: 0;
+}
+
+.contact .content>div form button:hover {
+    background-color: #59e3c59d;
+    color: rgb(239, 210, 210);
+    border-radius: 5px;
+}
+
+.contact .content >div>div>div{
     display: flex;
     margin: 4vh 0;
 }
 
-.contact .content > div i {
+.contact .content > div > div>div i {
     font-size: 3vw;
     margin-right: 1.5vw;
 }
@@ -346,7 +573,12 @@ main>div:nth-child(2n + 0) {
 
 footer {
     background-color: var(--secondBackground-color);
-    height: 10vh;
+    height: 6vh;
+}
+
+footer .container {
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (max-width: 900px) {
@@ -355,40 +587,60 @@ footer {
         font-size: 2vw !important;
     }
 
+    header .top-nav label {
+        margin-top: 3vh;
+    }
+
     .content h1{
         font-size: 5vw !important;
     }
 
     .home .content h4 {
-        font-size: 3vw !important;
+        font-size: 4vw !important;
     }
     .home .content :nth-child(2) {
-        font-size: 6vw;
+        font-size: 6vw !important;
     }
 
     .home .content :nth-child(3) {
-        font-size: 4.5vw;
+        font-size: 4.5vw !important;
     }
 
     .home .content div:nth-child(2) {
         display: none;
     }
 
+    .about .content {
+        top: 10vh;
+    }
+
     .about .content div:nth-child(2) {
-        display: none;
+        /* margin-top: 20vh; */
+        height: 30vh;
     }
 
     .about .content p {
         font-size: 3vw !important;
     }
 
+
+    .edu .content div ul {
+        font-size: 2.1vw;
+        margin: 0;
+    }
+
+    .projects {
+        height: 159vh !important;
+    }
+
     .group {
-        justify-content: center !important;
+        justify-content: space-around !important;
     }
 
     .projects .project {
         width: 45% !important;
-        height: 30vh !important;
+        margin-bottom: 3vh;
+        /* height: 30vh !important; */
     }
 
     .projects a {
@@ -399,16 +651,39 @@ footer {
         margin-top: 3vh;
     }
 
+    .contact .content {
+        top: 10vh !important;
+    }
+
+    .contact .content div div {
+        margin : 1.3vh 0 !important;
+    }
+
     .contact a i {
         font-size: 7vw !important;
+    }
+
+    .contact button {
+        font-size: 2.5vw !important;
+    }
+
+    .contact .content>div {
+        display: grid;
+    }
+
+    .contact .content form :nth-child(2) {
+        max-height: 8vh !important;
+    }
+
+    .contact .content>div >div {
+        width: 80vw !important;
     }
 
 }
 
 @media screen and (max-width: 600px) {
     header {
-        position: relative;
-        height: 100vh;
+        height: 7vh;
     }
 
     header nav ul{
@@ -425,7 +700,16 @@ footer {
         height: 100%;
     }
 
+    header a {
+        font-size: 4vw !important;
+    }
+
+    .home .content {
+        top: 20vh !important;
+    }
+
     .content {
+        top: 3vh !important;
         margin-left: 40px;
     }
 
@@ -437,19 +721,47 @@ footer {
         font-size: 4vw !important;
     }
     .home .content :nth-child(2) {
-        font-size: 8.5vw;
+        font-size: 8.5vw !important;
     }
 
     .home .content :nth-child(3) {
-        font-size: 5.5vw;
+        font-size: 5.5vw !important;
+    }
+
+    .about .content {
+        top: 10vh !important;
+        flex-wrap: wrap;
+    }
+
+    .about .content div:nth-child(2) {
+        width: 40%;
+        margin : 0 auto;
+        height: 29vh;
     }
 
     .about .content div:nth-child(1) {
-        width: 80vw;
+        width: 80%;
     }
 
     .about .content p {
         font-size: 4vw !important;
+    }
+
+    .edu .content ,.exp .content , .skills .content{
+        top: 6vh !important;
+    }
+
+    .edu .content div ul {
+        font-size: 2.8vw;
+        margin: 0;
+    }
+
+    .edu h4 , .edu p{
+        margin: 0 0 3px;
+    }
+
+    .edu .content div p {
+        font-size: 2.8vw;
     }
 
     .edu .row div , .exp .row div{
@@ -460,13 +772,18 @@ footer {
         display: none;
     }
 
+    .projects {
+        height: 213vh !important;
+    }
+
     .projects .content {
-        top: 3vh !important;
+        top: 7vh !important;
     }
 
     .projects .project {
         width: 60% !important;
-        height: 25vh !important;
+        margin-bottom: 3vh;
+        /* height: 25vh !important; */
     }
 
     .projects a {
@@ -479,6 +796,18 @@ footer {
 
     .contact a i{
         font-size: 8vw !important;
+    }
+
+    .contact button {
+        font-size: 2.5vh !important;
+    }
+
+    .contact .content>div {
+        display: grid;
+    }
+
+    .contact .content>div >div {
+        width: 80vw !important;
     }
 
 }
