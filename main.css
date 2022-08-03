@@ -409,12 +409,15 @@ main>div:nth-child(2n + 0) {
 /* .edu .content > div {
     display: grid;
 } */
+.edu .content ul li {
+    font-size: 1.3vw;
+}
 
+
+/* End Education Section */
 .exp .content {
     top: 25vh;
 }
-
-/* End Education Section */
 .skills .content {
     top: 20vh;
 }
@@ -624,7 +627,7 @@ footer .container {
     }
 
 
-    .edu .content div ul {
+    .edu .content div ul li{
         font-size: 2.1vw;
         margin: 0;
     }
@@ -683,7 +686,7 @@ footer .container {
 
 @media screen and (max-width: 600px) {
     header {
-        height: 7vh;
+        height: 6vh;
     }
 
     header nav ul{
@@ -751,7 +754,7 @@ footer .container {
         top: 6vh !important;
     }
 
-    .edu .content div ul {
+    .edu .content div ul li{
         font-size: 2.8vw;
         margin: 0;
     }
@@ -810,4 +813,13 @@ footer .container {
         width: 80vw !important;
     }
 
+}
+
+@media screen and (max-width: 450px) {
+    .skills ul li h4{
+        font-size: 4vw;
+    }
+    .skills h3{
+        font-size: 5vw;
+    }
 }
