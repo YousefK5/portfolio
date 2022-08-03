@@ -46,12 +46,29 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-.navlink:hover {
-    background-color: #59e3c59d;
+.navlink::before {
+    content: "";
+    width: 0;
+    position: absolute;
+    height: 2px;
+    position: absolute;
+    background-color: #02896c;
+    bottom: 0;
+    transition: all 0.5s linear;
+}
+
+.navlink:hover{
+    /* background-color: #59e3c59d;
     color: rgb(239, 210, 210);
-    border-radius: 5px;
+    border-radius: 5px; */
+    color: #02896c;
+}
+
+.navlink:hover::before{
+    width: 80%;
 }
 
 
